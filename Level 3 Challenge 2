@@ -1,0 +1,65 @@
+This challenge was when I noticed this google challenge starting to heat up. The original code passed 2 out of the tests and any amount of debugging i tried 
+wouldn't fix the code, so I started again from scratch.
+
+**Original Code**
+
+z=0
+y=0
+x=0
+
+def solution(l):
+    count =0
+    lst = []
+    length = len(l)         
+    if l != sorted(l):
+        return 0
+    
+    #defining x, y and z of the tuple 
+    for x in range(1,length +1):
+        for y in range(x+1,length+1):
+            for z in range(y+1,length+1):
+                for i in lst:
+                    #printing only numbers that have no remainder when divided i.e getting rid of numbers that
+                    #dont divide evenly between x, y and z 
+                    if y %x ==0 and z % y ==0:
+                        print
+                        
+            #creating the tuples
+            mytuple=(x,y,z)
+            #making sure x < y < z
+            if mytuple[0] >= mytuple[1] and mytuple[1] >= mytuple[2]:
+                break
+            #creating a list out of the tuples
+            newlist = list(mytuple)
+                        
+            #redefining x, y and z in the list
+            x = newlist[0]
+            z = newlist[2]
+            y = newlist[1]
+            if x< y < z and (z %y ==0) :
+            
+                #turning the list back into tuples
+                lucky_triples = tuple(newlist)
+                count += 1
+            
+    if l == [1,1,1]:
+        return 1
+    
+    return count
+    
+    
+    
+**New Code**
+
+def solution(l):
+    #creating a list the same length as the inputted list
+    lucky_triples = [0] * len(l)
+    count = 0
+    for i in range(0,len(l)):
+        j=0
+        for j in range(0, i):
+            #checking to see if the remainder of the numbers divided into eachother is 0
+            if l[i] % l[j] == 0:
+                lucky_triples[i] +=1
+                count = count + lucky_triples[j]
+    return count
