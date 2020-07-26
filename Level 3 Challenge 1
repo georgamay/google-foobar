@@ -1,0 +1,28 @@
+def solution(l):
+    
+    #create a list that will split up the list into major, minor and revisions.
+    versions = [] 
+    
+    for major in l :
+        versions.append(major.split("."))
+    
+    #create another empty list that converts the strings into integers    
+    integers = []
+    
+    for minor in versions :
+        
+        int_list = []
+        
+        for entry in minor :
+            entry = int(entry)
+            int_list.append(entry)
+            
+        integers.append(int_list)
+     
+    #sort the integers   
+    sorted_list= sorted(integers)
+    
+    #this returns the sorted versions into the format they were given
+    result = [('.'.join(str(num) for num in entry)) for entry in sorted_list]
+ 
+    return result
