@@ -1,0 +1,13 @@
+This challenge became a lot easier for me when I stopped focusing so much on the tree or triangular shape that the numbers were in and more on the relationship 
+between the numbers.
+
+
+def solution(x,y):
+    #difference is calculated so that the calculation is moving diagonally down
+    difference = y-1
+    #finding the corner of the triangle
+    tri_cor = x + difference
+    #relationship between the numbers moving diangonally
+    id = tri_cor * (tri_cor +1) //2 - difference
+    difference -= difference
+    return str(id)
