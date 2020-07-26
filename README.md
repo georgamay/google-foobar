@@ -32,7 +32,7 @@ Given a list of elevator versions represented as strings, write a function solut
 
 For example, given the list l as ["1.1.2", "1.0", "1.3.3", "1.0.12", "1.0.2"], the function solution(l) would return the list ["1.0", "1.0.2", "1.0.12", "1.1.2", "1.3.3"]. If two or more versions are equivalent but one version contains more numbers than the others, then these versions must be sorted ascending based on how many numbers they have, e.g ["1", "1.0", "1.0.0"]. The number of elements in the list l will be at least 1 and will not exceed 100.
 
-## Challenge 2 - Buuny Prisoner Locating
+## Challenge 2 - Bunny Prisoner Locating
 
 Keeping track of Commander Lambda’s many bunny prisoners is starting to get tricky. You’ve been tasked with writing a program to match bunny prisoner IDs to cell locations.
 The LAMBCHOP doomsday device takes up much of the interior of Commander Lambda’s space station, and as a result, the prison blocks have an unusual layout. They are stacked in a triangular shape, and the bunny prisoners are given numerical IDs starting from the corner, as follows:
