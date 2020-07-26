@@ -1,0 +1,21 @@
+def solution(n):
+    #counting the number of operations
+    count = 0
+    #making sure that n is taken as a string
+    n = str(n)
+    
+    #loop created when n is greater than 1 
+    while int(n) !=1:
+        if int(n) < 1:
+            break
+        #if the number is even, it is divided by 2 until 1 is reached   
+        if int(n) % 2 == 0:
+            n = int(n)/2
+	      #if the number is odd, +1 or -1 is added to n to make it an even number
+        elif n!= 3 and ((int(n)+1)/2) % 2 == 0:
+            n = int(n) + 1
+            
+        else:
+            n = int(n) - 1
+        count+=1
+    return count
