@@ -1,0 +1,29 @@
+import math
+from math import sqrt
+def solution(area):
+
+    	#create empty list
+    	panels=[]
+	#defining variable root to be the squareroot of the inputted area
+    	root = math.sqrt(area)
+	
+	#checking if the area is a square number and if so appending it to the empty list panels
+	if int(root + 0.5)**2 == area:
+		panels.append(area)
+		return panels	
+
+	#this is a loop for when the area is not a square number. This is finding the nearest square number and rounding down and doing this until the final answer is 1 and appendin gthese numbers to the list panels
+    	while area != int(root + 0.5)**2:
+            	nearestsquare = math.floor(sqrt(area))**2
+            	nearestsquare = int(nearestsquare)
+            	panels.append(nearestsquare)
+            	extra = area - nearestsquare
+            	if extra == int(root + 0.5)**2 :
+                	print(list([nearestsquare, extra]))
+
+                	return panels, extra 
+            	area = area - nearestsquare
+
+            
+            	if area==0:
+                	return panels
